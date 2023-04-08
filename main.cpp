@@ -14,17 +14,21 @@ int main()
     TrackingTask task(taskName, description);
 
     // タイマ生成
-    TrackingTimer timer;
+    TrackingTimer timer(task);
 
-    timer.start();
-    sleep(5);
-    timer.stop();
+    for( int i = 0; i < 5; i++ ){
+        timer.start();
+        sleep(1);
+        timer.stop();
 
-    // 開始から停止までの経過時間を表示
-    std::cout << timer.GetElapsedTime()     << std::endl;
+        // 開始から停止までの経過時間を表示
+        std::cout << timer.GetElapsedTime()     << std::endl;
+    }
 
     std::cout << task.GetTaskName()         << std::endl;
     std::cout << task.GetTaskDescription()  << std::endl;
+    // タスクの累計作業時間を表示
+    std::cout << task.GetTotalElapsedTime()      << std::endl;
 
     return 0;
 }
