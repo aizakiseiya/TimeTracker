@@ -3,7 +3,7 @@ CXXFLAGS = -Wall -std=c++17
 LFLAGS = -Wall
 
 TARGET = tracking.o
-SRCS = main.cpp
+SRCS = main.cpp TrackingTimer.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 .PHONY: all
